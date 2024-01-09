@@ -1,20 +1,18 @@
-var add = document.querySelector("#Add");
-var remove = document.querySelector("#Remove");
-var input = document.querySelector("input");
-var ul = document.querySelector("ul");
+var start = document.querySelector("#start");
+var stop = document.querySelector("#stop");
+var h4 = document.querySelector("h4");
 
-var li;
 
-add.addEventListener("click", function(){
-    if ( input.value .trim() === " "){}
-    else {
-        li = document.createElement("li");
-        li.textContent = input.value;
-        ul.appendChild(li);
-        input.value = " ";
-    }
+var Int;
+start.addEventListener("click", function() {
+    var count = 0;
+    Int = setInterval(function() { 
+        h4.textContent = count;
+        count ++;
+     },1000)
+
 })
 
-remove.addEventListener("click", function(){
-    ul.removeChild(li);
+stop.addEventListener("click", function() {
+    clearInterval(Int);
 });
